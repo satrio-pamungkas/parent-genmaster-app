@@ -39,7 +39,6 @@ export default StyleSheet.create({
     gridView: {
         flex: 1,
         backgroundColor: 'white',
-        // backgroundColor: '#e5e5e5',
     },
     itemContainer: {
         justifyContent: 'flex-end',

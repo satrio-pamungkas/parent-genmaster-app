@@ -1,9 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
-import Beranda from './src/screens/Beranda';
+
+import Beranda from '@screens/Beranda';
+import ParentTahu from '@screens/ParentTahu';
+import DailyHabit from '@screens/DailyHabit';
+import FunGames from '@screens/FunGames';
+import FunLearning from '@screens/FunLearning';
+import TipsParent from '@screens/TipsParent';
+
+import 'react-native-gesture-handler';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator, CardStyleInterpolators } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Ionicons } from '@expo/vector-icons';
@@ -16,18 +24,41 @@ import { useFonts,
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-    
 
 function BerandaStackScreen() {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Beranda" component={Beranda} />
-            {/* <Stack.Screen options={{
+            <Stack.Screen options={{
                 headerStyle: {
-                    backgroundColor: '#296FD7',
+                    backgroundColor: '#1abc9c',
                 },
                 headerTintColor: '#fff',
-            }} name="Daily Habit" component={Page} /> */}
+            }} name="Parent Tahu" component={ParentTahu} />
+            <Stack.Screen options={{
+                headerStyle: {
+                    backgroundColor: '#3498db',
+                },
+                headerTintColor: '#fff',
+            }} name="Daily Habit" component={DailyHabit} />
+            <Stack.Screen options={{
+                headerStyle: {
+                    backgroundColor: '#e76f51',
+                },
+                headerTintColor: '#fff',
+            }} name="Fun Games" component={FunGames} />
+            <Stack.Screen options={{
+                headerStyle: {
+                    backgroundColor: '#9b59b6',
+                },
+                headerTintColor: '#fff',
+            }} name="Fun Learning" component={FunLearning} />
+            <Stack.Screen options={{
+                headerStyle: {
+                    backgroundColor: '#0e873c',
+                },
+                headerTintColor: '#fff',
+            }} name="Tips Parent" component={TipsParent} />
         </Stack.Navigator>
     )
 }
@@ -39,7 +70,7 @@ export default function App() {
         { name: 'Tips Parent', code: '#2ecc71', icon: 'info-circle' },
         { name: 'Daily Habit', code: '#3498db', icon: 'check-square' },
         { name: 'Fun Learning', code: '#9b59b6', icon: 'book' },
-        { name: 'Fun Games', code: '#deab90', icon: 'gamepad' },
+        { name: 'Fun Games', code: '#e76f51', icon: 'gamepad' },
     ]);
 
     let [fontsLoaded] = useFonts({

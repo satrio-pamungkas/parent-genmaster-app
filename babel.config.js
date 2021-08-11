@@ -9,6 +9,7 @@ module.exports = function(api) {
                 "root": ["./"],
                 "alias": {
                   "@assetBeranda": "./assets/images/beranda",
+                  "@screens": "./src/screens",
                 }
               },
             ],

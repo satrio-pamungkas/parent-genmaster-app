@@ -10,13 +10,13 @@ import Learning from '@assetBeranda/Learning.png';
 import Tips from '@assetBeranda/Tips.png';
 import Parenting from '@assetBeranda/Parenting.png';
 
-export default function Beranda() {
+export default function Beranda({ navigation }) {
     const [items, setItems] = React.useState([
-        { name: 'Parent Tahu', code: '#1abc9c', icon: 'user-check', img: Parenting },
-        { name: 'Tips Parent', code: '#2ecc71', icon: 'info-circle', img: Tips },
-        { name: 'Daily Habit', code: '#3498db', icon: 'check-square', img: Habit },
-        { name: 'Fun Learning', code: '#9b59b6', icon: 'book', img: Learning },
-        { name: 'Fun Games', code: '#e76f51', icon: 'gamepad', img: Games },
+        { name: 'Parent Tahu', code: '#1abc9c', img: Parenting },
+        { name: 'Tips Parent', code: '#0e873c', img: Tips },
+        { name: 'Daily Habit', code: '#3498db', img: Habit },
+        { name: 'Fun Learning', code: '#9b59b6', img: Learning },
+        { name: 'Fun Games', code: '#e76f51', img: Games },
     ]);
 
     return (
@@ -34,14 +34,11 @@ export default function Beranda() {
                 spacing={10}
                 renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => {
-                        navigation.navigate('Daily Habit');
+                        navigation.navigate(item.name);
                     }}>
                         <View style={[styles.itemContainer, { backgroundColor: item.code }]}>
-                        {/* <Image source={Background} style={styles.shapeBackground}></Image> */}
-                            {/* <FontAwesome5 name={item.icon} size={24} color="white" style={{ marginBottom: 10 }}/> */}
                             <Image source={item.img} style={styles.imgStyle}></Image>
                             <Text style={styles.itemName}>{item.name}</Text>
-                            {/* <Text style={styles.itemCode}>Deskripsi Singkat</Text> */}
                         </View>
                     </TouchableOpacity>
                 )}
