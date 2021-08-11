@@ -9,6 +9,7 @@ import Games from '@assetBeranda/Games.png';
 import Learning from '@assetBeranda/Learning.png';
 import Tips from '@assetBeranda/Tips.png';
 import Parenting from '@assetBeranda/Parenting.png';
+import Wave from '@assetBeranda/wave.png';
 
 export default function Beranda({ navigation }) {
     const [items, setItems] = React.useState([
@@ -26,7 +27,8 @@ export default function Beranda({ navigation }) {
                 <Text style={styles.selamatDatang}>Selamat Datang</Text>
                 <Text style={styles.parent}>Parent !</Text>
             </View>
-            <View style={styles.shapeAtas}></View>
+            {/* <View style={styles.shapeAtas}></View> */}
+            <Image source={Wave} style={styles.waveStyle}></Image>
             <FlatGrid
                 itemDimension={130}
                 data={items}

@@ -1,18 +1,38 @@
-import React from 'react';
-import { Text, StyleSheet, View, TouchableOpacity, Button, StatusBar } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, StyleSheet, View, TouchableOpacity, Button, StatusBar, ActivityIndicator } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 import styles from '../styles/android/FunGames.style';
 
 export default function ParentTahu() {
-    const [items, setItems] = React.useState([
-        { name: 'Judul konten disini', code: '#1abc9c', icon: 'user-check' },
-        { name: 'Judul konten disini', code: '#2ecc71', icon: 'info-circle' },
-        { name: 'Judul konten disini', code: '#3498db', icon: 'check-square' },
-        { name: 'Judul konten disini', code: '#9b59b6', icon: 'book' },
-        { name: 'Judul konten disini', code: '#e76f51', icon: 'gamepad' },
-        { name: 'Judul konten disini', code: '#e5989b', icon: 'gamepad' },
-        { name: 'Judul konten disini', code: '#deab90', icon: 'gamepad' },
-    ]);
+    const [isLoading, setLoading] = useState(true);
+    const [data, setData] = useState([]);
+
+    // const [items, setItems] = React.useState([
+    //     { name: 'Judul konten disini', code: '#1abc9c', icon: 'user-check' },
+    //     { name: 'Judul konten disini', code: '#2ecc71', icon: 'info-circle' },
+    //     { name: 'Judul konten disini', code: '#3498db', icon: 'check-square' },
+    //     { name: 'Judul konten disini', code: '#9b59b6', icon: 'book' },
+    //     { name: 'Judul konten disini', code: '#e76f51', icon: 'gamepad' },
+    //     { name: 'Judul konten disini', code: '#e5989b', icon: 'gamepad' },
+    //     { name: 'Judul konten disini', code: '#deab90', icon: 'gamepad' },
+    // ]);
+
+    const getList = async () => {
+        try {
+            const response = await fetch('https://parentgenmaster.savani.masuk.web.id/fun-games');
+            const json = await response.json();
+            setData(json.data.funGames);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        getList();
+    }, []);
+
 
     return (
         <View style={styles.container}>
@@ -24,31 +44,33 @@ export default function ParentTahu() {
                 </Text>
             </View>
             <View style={styles.shapes}></View>
-            <FlatGrid
+            {isLoading ? <ActivityIndicator/> : (
+                <FlatGrid
                     itemDimension={400}
-                    data={items}
+                    data={data}
                     style={styles.gridView}
                     spacing={10}
+                    keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => (
                         <TouchableOpacity onPress={() => {
                             navigation.navigate('Page');
                         }}>
-                            <View style={[styles.itemContainer, { backgroundColor: item.code }]}>
+                            <View style={[styles.itemContainer, { backgroundColor: item.color }]}>
                             {/* <Image source={Background} style={styles.shapeBackground}></Image> */}
                                 <View style={styles.columnsatu}>
-                                    <Text style={styles.itemName}>{item.name}</Text>
+                                    <Text style={styles.itemName}>{item.judul}</Text>
                                     <Text style={styles.itemCode}>Deskripsi Singkat</Text>
                                 </View>
                                 <View style={styles.columndua}>
                                     <TouchableOpacity style={styles.buttonStyle}>
-                                        <Text style={[styles.buttonText, { color: item.code }]} >Lihat</Text>
+                                        <Text style={[styles.buttonText, { color: item.color }]} >Lihat</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                    )}
-                    > 
-            </FlatGrid>
+                    )}> 
+                </FlatGrid>
+            )}
         </View>
     );
 }

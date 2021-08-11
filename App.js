@@ -28,7 +28,12 @@ const Tab = createBottomTabNavigator();
 function BerandaStackScreen() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Beranda" component={Beranda} />
+            <Stack.Screen options={{
+                headerStyle: {
+                    backgroundColor: '#296FD7',
+                },
+                headerTintColor: '#fff',
+            }} name="Beranda" component={Beranda} />
             <Stack.Screen options={{
                 headerStyle: {
                     backgroundColor: '#1abc9c',

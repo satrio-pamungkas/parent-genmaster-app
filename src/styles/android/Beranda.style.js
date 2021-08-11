@@ -22,7 +22,7 @@ export default StyleSheet.create({
     },
     selamatDatangColumn: {
         width: 300,
-        marginTop: 40,
+        marginTop: 30,
         marginLeft: 24,
         marginBottom: 40,
         position: 'absolute',
@@ -39,6 +39,7 @@ export default StyleSheet.create({
     gridView: {
         flex: 1,
         backgroundColor: 'white',
+        marginTop: 10,
     },
     itemContainer: {
         justifyContent: 'flex-end',
@@ -69,5 +70,11 @@ export default StyleSheet.create({
         width: '60%',
         height: '50%',
         marginLeft: 10,
-    }
+    },
+    waveStyle: {
+        width: '100%',
+        height: 200,
+        position: 'absolute',
+        marginTop: 10,
+    },
 });
