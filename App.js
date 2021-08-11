@@ -8,6 +8,7 @@ import DailyHabit from '@screens/DailyHabit';
 import FunGames from '@screens/FunGames';
 import FunLearning from '@screens/FunLearning';
 import TipsParent from '@screens/TipsParent';
+import Konten from '@screens/Konten';
 
 import 'react-native-gesture-handler';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
@@ -24,6 +25,14 @@ import { useFonts,
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+function KontenStackScreen() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Konten" component={Konten}/>
+        </Stack.Navigator>
+    )
+}
 
 function BerandaStackScreen() {
     return (
@@ -64,6 +73,7 @@ function BerandaStackScreen() {
                 },
                 headerTintColor: '#fff',
             }} name="Tips Parent" component={TipsParent} />
+            <Stack.Screen name="Konten" component={Konten}/>
         </Stack.Navigator>
     )
 }
@@ -103,15 +113,15 @@ export default function App() {
                             )
                         }} />
                     {/* <Tab.Screen 
-                        name="HomeStack" 
-                        component={HomeStackScreen}
+                        name="KontenStack" 
+                        component={KontenStackScreen}
                         options={{
-                            tabBarLabel: 'Setelan',
+                            tabBarLabel: 'Konten',
                             tabBarIcon: ({ color, size }) => (
                                 <Ionicons name="settings" size={size} color={color} />
                             )
-                        }} />
-                    <Tab.Screen 
+                        }} /> */}
+                    {/* <Tab.Screen 
                         name="TestingStack" 
                         component={TestingStackScreen}
                         options={{

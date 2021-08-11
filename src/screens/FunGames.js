@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, TouchableOpacity, Button, StatusBar, ActivityIn
 import { FlatGrid } from 'react-native-super-grid';
 import styles from '../styles/android/FunGames.style';
 
-export default function ParentTahu() {
+export default function ParentTahu({ navigation }) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
 
@@ -53,7 +53,7 @@ export default function ParentTahu() {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => (
                         <TouchableOpacity onPress={() => {
-                            navigation.navigate('Page');
+                            navigation.navigate('Konten', { subMenu: 'fun-games', kode: item.id, });
                         }}>
                             <View style={[styles.itemContainer, { backgroundColor: item.color }]}>
                             {/* <Image source={Background} style={styles.shapeBackground}></Image> */}
