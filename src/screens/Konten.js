@@ -5,19 +5,19 @@ import YoutubePlayer from "react-native-youtube-iframe";
 import styles from '../styles/android/Konten.style';
 
 export default function Konten({ route, navigation }) {
-    let imageUrl = "https://img.freepik.com/free-vector/colorful-mountains-landscape-background_52683-24001.jpg?size=626&ext=jpg";
+    let imagePrefix = "https://api.parentgenmaster.masuk.id/";
 
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [playing, setPlaying] = useState(false);
 
-    const { subMenu, kode } = route.params;
+    const { subMenu, slug, kode } = route.params;
 
     const getList = async () => {
         try {
-            const response = await fetch(`https://parentgenmaster.savani.masuk.web.id/${subMenu}/${kode}`);
+            const response = await fetch(`https://api.parentgenmaster.masuk.id/${slug}/${kode}`);
             const json = await response.json();
-            setData(json.data.funGames);
+            setData(json.data.[subMenu]);
         } catch (error) {
             console.log(error);
         } finally {
@@ -44,8 +44,8 @@ export default function Konten({ route, navigation }) {
         <ScrollView style={{ backgroundColor: 'white' }}>
             <Text style={styles.heading}>{data.judul}</Text>
             <Text style={styles.author}>Penyunting: {data.penulis}</Text>
-            { imageUrl ? (
-                <Image source={{ uri: imageUrl }} style={styles.image}></Image>
+            { data.gambar ? (
+                <Image source={{ uri: imagePrefix + data.gambar }} style={styles.image}></Image>
             ) : (
                 null
             )}
