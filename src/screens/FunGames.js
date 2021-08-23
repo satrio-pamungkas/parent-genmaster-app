@@ -46,13 +46,14 @@ export default function ParentTahu({ navigation }) {
                             navigation.navigate('Konten', { subMenu: 'funGames', slug: 'fun-games', kode: item.id, });
                         }}>
                             <View style={[styles.itemContainer, { backgroundColor: item.color }]}>
-                            {/* <Image source={Background} style={styles.shapeBackground}></Image> */}
                                 <View style={styles.columnsatu}>
                                     <Text style={styles.itemName}>{item.judul}</Text>
-                                    {/* <Text style={styles.itemCode}>Deskripsi Singkat</Text> */}
                                 </View>
                                 <View style={styles.columndua}>
-                                    <TouchableOpacity style={styles.buttonStyle}>
+                                    <TouchableOpacity onPress={() => {
+                                        navigation.navigate('Konten', { subMenu: 'funGames', slug: 'fun-games', kode: item.id, });
+                                    }}
+                                        style={styles.buttonStyle}>
                                         <Text style={[styles.buttonText, { color: item.color }]} >Lihat</Text>
                                     </TouchableOpacity>
                                 </View>

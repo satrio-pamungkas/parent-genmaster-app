@@ -27,7 +27,6 @@ export default function Beranda({ navigation }) {
                 <Text style={styles.selamatDatang}>Selamat Datang</Text>
                 <Text style={styles.parent}>Parent !</Text>
             </View>
-            {/* <View style={styles.shapeAtas}></View> */}
             <Image source={Wave} style={styles.waveStyle}></Image>
             <FlatGrid
                 itemDimension={130}
