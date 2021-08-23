@@ -13,7 +13,7 @@ import Wave from '@assetBeranda/wave.png';
 
 export default function Beranda({ navigation }) {
     const [items, setItems] = React.useState([
-        { name: 'Parent Tahu', code: '#1abc9c', img: Parenting },
+        { name: 'Parent Harus Tahu', code: '#1abc9c', img: Parenting },
         { name: 'Tips Parent', code: '#0e873c', img: Tips },
         { name: 'Daily Habit', code: '#3498db', img: Habit },
         { name: 'Fun Learning', code: '#9b59b6', img: Learning },

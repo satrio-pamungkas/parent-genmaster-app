@@ -48,7 +48,7 @@ function BerandaStackScreen() {
                     backgroundColor: '#1abc9c',
                 },
                 headerTintColor: '#fff',
-            }} name="Parent Tahu" component={ParentTahu} />
+            }} name="Parent Harus Tahu" component={ParentTahu} />
             <Stack.Screen options={{
                 headerStyle: {
                     backgroundColor: '#3498db',
