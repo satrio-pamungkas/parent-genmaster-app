@@ -46,6 +46,7 @@ export default StyleSheet.create({
     },
     columnsatu: {
         flex: 7,
+        paddingRight: 10,
     },
     columndua: {
         flex: 2,

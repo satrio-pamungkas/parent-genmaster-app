@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, TouchableOpacity, Button, StatusBar, ActivityIn
 import { FlatGrid } from 'react-native-super-grid';
 import styles from '../styles/android/DailyHabit.style';
 
-export default function DailyHabit() {
+export default function DailyHabit({ navigation }) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
 
@@ -28,8 +28,8 @@ export default function DailyHabit() {
             <StatusBar barStyle="light-content" backgroundColor="#3498db" />
             <View style={styles.heading}>
                 <Text style={styles.description}>
-                    <Text style={{ fontFamily: 'Raleway_700Bold' }}>Lorem ipsum </Text>
-                    is simply dummy text of the printing and typesetting industry.
+                    <Text style={{ fontFamily: 'Raleway_700Bold' }}>Daily Habit </Text>
+                    Memberikan rekomendasi penerapan terkait kebiasaan baik yang perlu ke anak setiap harinya
                 </Text>
             </View>
             <View style={styles.shapes}></View>
@@ -48,7 +48,7 @@ export default function DailyHabit() {
                             {/* <Image source={Background} style={styles.shapeBackground}></Image> */}
                                 <View style={styles.columnsatu}>
                                     <Text style={styles.itemName}>{item.judul}</Text>
-                                    <Text style={styles.itemCode}>Deskripsi Singkat</Text>
+                                    {/* <Text style={styles.itemCode}>Deskripsi Singkat</Text> */}
                                 </View>
                                 <View style={styles.columndua}>
                                     <TouchableOpacity style={styles.buttonStyle}>

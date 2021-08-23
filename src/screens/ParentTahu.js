@@ -28,8 +28,8 @@ export default function ParentTahu({ navigation }) {
             <StatusBar barStyle="light-content" backgroundColor="#1abc9c" />
             <View style={styles.heading}>
                 <Text style={styles.description}>
-                    <Text style={{ fontFamily: 'Raleway_700Bold' }}>Lorem ipsum </Text>
-                    is simply dummy text of the printing and typesetting industry.
+                    <Text style={{ fontFamily: 'Raleway_700Bold' }}>Parent Tahu </Text>
+                    Memberikan informasi di terkait parenting dan pola asuh yang baik terhadap masyarakat luas
                 </Text>
             </View>
             <View style={styles.shapes}></View>
@@ -48,7 +48,7 @@ export default function ParentTahu({ navigation }) {
                             {/* <Image source={Background} style={styles.shapeBackground}></Image> */}
                                 <View style={styles.columnsatu}>
                                     <Text style={styles.itemName}>{item.judul}</Text>
-                                    <Text style={styles.itemCode}>Deskripsi Singkat</Text>
+                                    {/* <Text style={styles.itemCode}>Deskripsi Singkat</Text> */}
                                 </View>
                                 <View style={styles.columndua}>
                                     <TouchableOpacity style={styles.buttonStyle}>

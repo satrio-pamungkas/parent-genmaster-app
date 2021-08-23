@@ -102,8 +102,8 @@ export default function App() {
     } else {
         return (
             <NavigationContainer>
-                <Tab.Navigator screenOptions={{ headerShown: false }}>
-                    <Tab.Screen 
+                <Stack.Navigator screenOptions={{ headerShown: false }}>
+                    <Stack.Screen 
                         name="BerandaStack" 
                         component={BerandaStackScreen}
                         options={{
@@ -130,7 +130,7 @@ export default function App() {
                                 <Ionicons name="information-circle-sharp" size={size} color={color} />
                             )
                         }}/> */}
-                </Tab.Navigator>
+                </Stack.Navigator>
             </NavigationContainer>
         )
     }

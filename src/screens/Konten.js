@@ -52,17 +52,21 @@ export default function Konten({ route, navigation }) {
             <Text style={styles.text}>
                 {data.konten}
             </Text>
-            <YoutubePlayer
-                webViewStyle={{ opacity: 0.99 }}
-                webViewProps={{
-                    renderToHardwareTextureAndroid: true,
-                    androidLayerType:
-                        Platform.OS === 'android' && Platform.Version <= 22 ? 'hardware' : 'none',
-                  }}
-                height={250}
-                play={playing}
-                videoId={data.youtube}
-                onChangeState={onStateChange}/>
+            { data.youtube ? (
+                <YoutubePlayer
+                    webViewStyle={{ opacity: 0.99 }}
+                    webViewProps={{
+                        renderToHardwareTextureAndroid: true,
+                        androidLayerType:
+                            Platform.OS === 'android' && Platform.Version <= 22 ? 'hardware' : 'none',
+                        }}
+                    height={250}
+                    play={playing}
+                    videoId={data.youtube}
+                    onChangeState={onStateChange}/>
+            ) : (
+                null
+            )}
             <Text style={styles.referensi}>Referensi</Text>
             <Text style={styles.referensiList}>{'\u2022'} {data.referensi}</Text>
         </ScrollView>

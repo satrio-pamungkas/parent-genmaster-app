@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "parent-genmaster-app",
+    "name": "Parent Genmaster",
     "slug": "parent-genmaster-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,7 +23,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/apps/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.parentgenmaster.parentgenmaster",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
