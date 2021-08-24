@@ -12,7 +12,7 @@ pendampingan Beasiswa JFLS 2021. Parent Genmaster memiliki kepanjangan berdasark
 yaitu Peran Orang Tua dalam Membentuk Generasi Emas Berkarakter
 
 ## Bagaimana cara mengunduh versi .apk ? :speech_balloon:
-Silakan kunjungi laman resmi berikut : https://parentgenmaster.masuk.id/
+Silakan kunjungi laman resmi berikut untuk mengunduh versi Android : https://parentgenmaster.masuk.id/
 
 ## Bagaimana cara menjalankan aplikasi dari repositori berikut ? :speech_balloon:
 ``` bash
